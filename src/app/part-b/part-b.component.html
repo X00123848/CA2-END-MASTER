@@ -1,0 +1,57 @@
+<div class ="jumbotron" align=center>
+    <h1>BMI Calculator</h1>
+
+    <form>
+        <div class="row">
+            <h2>Enter Your Weight</h2>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>Stone</h4>
+            <input [(ngModel)]="stone" name="stone" (keyup)=" StoneToKgs()"  step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>Pounds</h4>
+            <input [(ngModel)]="pounds" name="pounds"(keyup)=" StoneAndPoundToKgs()"  step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>or KGs</h4>
+            <input [(ngModel)]="orKgs" name="orKgs"(keyup)="orKgsToStoneAndPound()"  step="any" class="form-control" >
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>Enter Your Height</h2>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>Feet</h4>
+            <input [(ngModel)]="feet" name="feet" (keyup)="feetToMeters()"  step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>Inches</h4>
+            <input [(ngModel)]="inches" name="inches"(keyup)="feetAndInchesToMeters()"  step="any" class="form-control" >
+            </div>
+            </div>
+            <div class=col-sm-4>
+                <div class="form-group">
+            <h4>or Meters</h4>
+            <input [(ngModel)]="orMeters" name="orMeters"(keyup)="orMetersTofeetAndInches()"  step="any" class="form-control"  >
+            </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary"  (click)="BMICalculation()">Calculate BMI</button>
+        <h6>Enter your weight either in stones/ pounds or kilograms and your height either in feet/ inches or meters</h6>
+        <div align=left>
+            <h4>Result:</h4>
+        </div>
+        <div id="result">
+            <p>Your BMI is {{bmi}}, this means that you are {{type}}</p>
+        </div>
+    </form>
+</div>
